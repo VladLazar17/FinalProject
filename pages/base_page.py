@@ -10,7 +10,7 @@ class BasePage(Browser):
     SEARCH_INPUT = (By.ID, 'small-searchterms')
     SEARCH_BUTTON = (By.XPATH, '//button[text()="Search"]')
 
-    BASE_URL = 'https://www.nopcommerce.com/en'
+    BASE_URL = 'https://demo.nopcommerce.com/'
 
     def wait_for_element_to_be_present(self, element_locator, seconds_to_wait):
         wait = WebDriverWait(self.driver, seconds_to_wait)

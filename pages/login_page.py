@@ -5,14 +5,14 @@ from pages.base_page import BasePage
 
 class LoginPage(BasePage):
 
-    EMAIL_INPUT = (By.CLASS_NAME, 'username')
+    EMAIL_INPUT = (By.CLASS_NAME, 'email')
     PASS_INPUT = (By.CLASS_NAME, 'password')
-    LOGIN_BUTTON = (By.XPATH, '//input[@type="submit"]')
+    LOGIN_BUTTON = (By.XPATH, '//button[text()="Log in"]')
     ERROR_MESSAGE_MAIN = (By.CSS_SELECTOR, 'div.message-error')
     ERROR_MESSAGE_EMAIL = (By.ID, 'Email-error')
-    FORGOT_PASSWORD_LINK = (By.XPATH, "//a[text()='Forgot username or password?']")
+    FORGOT_PASSWORD_LINK = (By.XPATH, "//a[text()='Forgot password?']")
 
-    LOGIN_PAGE_URL = 'https://www.nopcommerce.com/en/login'
+    LOGIN_PAGE_URL = 'https://demo.nopcommerce.com/login'
 
     def navigate_to_login_page(self):
         self.driver.get(self.LOGIN_PAGE_URL)

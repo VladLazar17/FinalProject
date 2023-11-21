@@ -46,4 +46,16 @@ def step_impl(context, message):
     assert message in context.login_page.get_main_error_message_text()
 
 
+@then('The email error is displayed')
+def step_impl(context):
+    assert context.login_page.is_email_error_message_displayed()
 
+
+@then('The email error message text contains "{email_error_text}"')
+def step_impl(context, email_error_text):
+    assert email_error_text in context.login_page.get_email_error_message_text()
+
+
+@then('The actual URL is "{expected_url}"')
+def step_impl(context, expected_url):
+    assert context.login_page.is_url_correct(expected_url)

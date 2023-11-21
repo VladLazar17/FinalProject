@@ -18,12 +18,14 @@ class RegisterPage(BasePage):
     PASSWORD_INPUT = (By.ID, 'Password')
     CONFIRM_PASSWORD_INPUT = (By.ID, 'ConfirmPassword')
     REGISTER_BUTTON = (By.ID, 'register-button')
+    CONTINUE_BUTTON = (By.CSS_SELECTOR, '.register-continue-button')
 
     FIRST_NAME_ERROR = (By.ID, 'FirstName-error')
     LAST_NAME_ERROR = (By.ID, 'LastName-error')
     EMAIL_ERROR = (By.ID, 'Email-error')
     PASSWORD_ERROR = (By.ID, 'Password-error')
     CONFIRM_PASSWORD_ERROR = (By.ID, 'ConfirmPassword-error')
+    SUCCESSUL_REGISTRATION_MESSAGE = (By.XPATH, '//div[@class="result"]')
 
     REGISTER_PAGE_URL = 'https://demo.nopcommerce.com/register'
 
@@ -40,7 +42,7 @@ class RegisterPage(BasePage):
         self.type(self.FIRST_NAME_INPUT, first_name)
 
     def set_last_name(self, last_name):
-        self.type(self.FIRST_NAME_INPUT, last_name)
+        self.type(self.LAST_NAME_INPUT, last_name)
 
     def select_date_of_birth_day(self, day):
         self.select_dropdown_option_by_text(self.DAY_DROPDOWN, day)
@@ -86,3 +88,12 @@ class RegisterPage(BasePage):
 
     def is_confirm_password_error_displayed(self):
         return self.is_element_displayed(self.CONFIRM_PASSWORD_ERROR)
+
+    def is_successful_registration_message_displayed(self):
+        return self.is_element_displayed(self.SUCCESSUL_REGISTRATION_MESSAGE)
+
+    def get_successful_registration_message_text(self):
+        return self.get_element_text(self.SUCCESSUL_REGISTRATION_MESSAGE)
+
+    def is_continue_button_displayed(self):
+        return self.is_element_displayed(self.CONTINUE_BUTTON)

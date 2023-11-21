@@ -4,6 +4,7 @@ from pages.base_page import BasePage
 
 
 class SearchResultsPage(BasePage):
+
     PRODUCT_ITEM = (By.CLASS_NAME, 'product-item')
     PRODUCT_TITLE = (By.CLASS_NAME, 'product-title')
 
