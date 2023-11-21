@@ -19,5 +19,5 @@ Feature: Test the functionality of the Search input
       | text |
       | laptop |
       | apple |
-      | HTC One M8 Android L 5.0 Lollipop |
-      | Samsung Series 9 NP900X4C Premium Ultrabook |
+      | shirt |
+      | nike |

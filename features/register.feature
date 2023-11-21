@@ -15,12 +15,12 @@ Feature: Test the functionality of the Register Page
   @register
   Scenario: Check that the registration is successful when completing all the necessary fields
     When I select Male Gender
-    When I enter "Vlad" in the First name field
-    When I enter "Lazar" in the Last name field
+    When I enter "Lazar" in the First name field
+    When I enter "Vlad" in the Last name field
     When I select Day "16" in the Date of birth field
     When I select Month "December" in the Date of birth field
     When I select Year "1994" in the Date of birth field
-    When I enter "vlad.lazar17@yahoo.com" in the Email field
+    When I enter "lazar_vlad@yahoo.com" in the Email field
     When I enter "Salus" in the Company name field
     When I uncheck the Newsletter field
     When I insert "password" in the Password field

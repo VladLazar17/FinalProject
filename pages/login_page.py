@@ -20,14 +20,14 @@ class LoginPage(BasePage):
     def set_email(self, email):
         self.type(self.EMAIL_INPUT, email)
 
-    # va seta o adresa de email neinregistrata folosind metoda set_email() de mai sus
+    # Funtie pentru seta o adresa de email neinregistrata folosind metoda set_email() de mai sus
     def set_unregistered_email(self):
         self.set_email('wrong_email@host.com')
 
     def set_password(self, password):
         self.type(self.PASS_INPUT, password)
 
-    # va seta o parola folosind functia set_password() de mai sus
+    # Functie pentru a seta o parola folosind functia set_password() de mai sus
     def set_wrong_password(self):
         self.set_password('parolaoarecare')
 

@@ -7,11 +7,13 @@ from browser import Browser
 
 
 class BasePage(Browser):
+
     SEARCH_INPUT = (By.ID, 'small-searchterms')
     SEARCH_BUTTON = (By.XPATH, '//button[text()="Search"]')
 
     BASE_URL = 'https://demo.nopcommerce.com/'
 
+    # Functie pentru a astepta ca un element sa fie prezent
     def wait_for_element_to_be_present(self, element_locator, seconds_to_wait):
         wait = WebDriverWait(self.driver, seconds_to_wait)
         return wait.until(expected_conditions.presence_of_element_located(element_locator))
@@ -46,16 +48,19 @@ class BasePage(Browser):
     def click_search_button(self):
         self.click(self.SEARCH_BUTTON)
 
+    # Functie pentru a selecta o valoare din Dropdown list
     def select_dropdown_option_by_text(self, dropdown_locator, text):
         dropdown_element = self.find(dropdown_locator)
         select = Select(dropdown_element)
         select.select_by_visible_text(text)
 
+    # Functie pentru a bifa un checkbox
     def check_checkbox(self, checkbox_locator):
         checkbox_element = self.find(checkbox_locator)
         if not checkbox_element.is_selected():
             self.click(checkbox_element)
 
+    # Functie pentru a debifa un checkbox
     def uncheck_checkbox(self, checkbox_locator):
         checkbox_element = self.find(checkbox_locator)
         if checkbox_element.is_selected():

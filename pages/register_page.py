@@ -25,7 +25,7 @@ class RegisterPage(BasePage):
     EMAIL_ERROR = (By.ID, 'Email-error')
     PASSWORD_ERROR = (By.ID, 'Password-error')
     CONFIRM_PASSWORD_ERROR = (By.ID, 'ConfirmPassword-error')
-    SUCCESSUL_REGISTRATION_MESSAGE = (By.XPATH, '//div[@class="result"]')
+    SUCCESSFUL_REGISTRATION_MESSAGE = (By.XPATH, '//div[@class="result"]')
 
     REGISTER_PAGE_URL = 'https://demo.nopcommerce.com/register'
 
@@ -90,10 +90,10 @@ class RegisterPage(BasePage):
         return self.is_element_displayed(self.CONFIRM_PASSWORD_ERROR)
 
     def is_successful_registration_message_displayed(self):
-        return self.is_element_displayed(self.SUCCESSUL_REGISTRATION_MESSAGE)
+        return self.is_element_displayed(self.SUCCESSFUL_REGISTRATION_MESSAGE)
 
     def get_successful_registration_message_text(self):
-        return self.get_element_text(self.SUCCESSUL_REGISTRATION_MESSAGE)
+        return self.get_element_text(self.SUCCESSFUL_REGISTRATION_MESSAGE)
 
     def is_continue_button_displayed(self):
         return self.is_element_displayed(self.CONTINUE_BUTTON)

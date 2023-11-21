@@ -46,7 +46,7 @@ def step_impl(context, message):
     assert message in context.login_page.get_main_error_message_text()
 
 
-@then('The email error is displayed')
+@then('The email error message is displayed')
 def step_impl(context):
     assert context.login_page.is_email_error_message_displayed()
 
