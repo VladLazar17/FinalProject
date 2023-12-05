@@ -3,7 +3,7 @@ Feature: Test the functionality of the Register Page
   Background:
     Given I am on the Register Page
 
-    @register
+  @register
   Scenario: Check that trying to register without completing any field displays error fields
     When I click on the Register button
     Then First name error is displayed
@@ -20,8 +20,8 @@ Feature: Test the functionality of the Register Page
     When I select Day "16" in the Date of birth field
     When I select Month "December" in the Date of birth field
     When I select Year "1994" in the Date of birth field
-    When I enter "lazar_vlad@yahoo.com" in the Email field
-    When I enter "Salus" in the Company name field
+    When I enter "vlad_lazar@yahoo.com" in the Email field
+    When I enter "ITFactory" in the Company name field
     When I uncheck the Newsletter field
     When I insert "password" in the Password field
     When I insert "password" in the Confirm password field

@@ -12,3 +12,11 @@ Feature: Test the functionality of the Wishlist page
     When I add to Wishlist the "Flower Girl Bracelet"
     Then The successful adding to Wishlist message is displayed
     Then The successful message contains "The product has been added to your wishlist"
+
+  @wishlist
+  Scenario: Check that a product which was added to Wishlist is actually in the Wishlist
+    Given I am on the Jewelry Page
+    When I add to Wishlist the "Flower Girl Bracelet"
+    When I click on "Wishlist" button
+    Then I actually am on "https://demo.nopcommerce.com/wishlist"
+    Then The "Flower Girl Bracelet" is actually in the Wishlist

@@ -7,9 +7,9 @@ from browser import Browser
 
 
 class BasePage(Browser):
-
     SEARCH_INPUT = (By.ID, 'small-searchterms')
     SEARCH_BUTTON = (By.XPATH, '//button[text()="Search"]')
+    WISHLIST_BUTTON = (By.CLASS_NAME, 'wishlist-label')
 
     BASE_URL = 'https://demo.nopcommerce.com/'
 
@@ -39,11 +39,17 @@ class BasePage(Browser):
     def is_element_displayed(self, locator):
         return self.find(locator).is_displayed()
 
+    def is_element_present(self, locator):
+        return len(self.driver.find_elements(*locator)) > 0
+
     def is_url_correct(self, expected_url):
         return expected_url == self.driver.current_url
 
     def type_text_on_search_input(self, text):
         self.type(self.SEARCH_INPUT, text)
+
+    def click_on_wishlist_button(self):
+        self.click(self.WISHLIST_BUTTON)
 
     def click_search_button(self):
         self.click(self.SEARCH_BUTTON)

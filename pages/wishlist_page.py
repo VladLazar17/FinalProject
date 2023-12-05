@@ -6,6 +6,7 @@ from pages.base_page import BasePage
 class WishlistPage(BasePage):
     WISHLIST_TEXT = (By.CLASS_NAME, 'page-title')
     WISHLIST_EMPTY_TEXT = (By.CLASS_NAME, 'no-data')
+    JEWELRY_ITEM = (By.CLASS_NAME, 'product-name')
 
     WISHLIST_PAGE_URL = 'https://demo.nopcommerce.com/wishlist'
 
@@ -17,3 +18,6 @@ class WishlistPage(BasePage):
 
     def get_wishlist_empty_text(self):
         return self.get_element_text(self.WISHLIST_EMPTY_TEXT)
+
+    def get_jewelry_name(self):
+        return self.get_element_text(self.JEWELRY_ITEM)
